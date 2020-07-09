@@ -1,0 +1,49 @@
+{
+  "name": "btc-message-verifier",
+  "version": "1.0.0-rc.1",
+  "description": "JavaScript library used to verify a message that had been signed using Bitcoin's approach.",
+  "main": "index.js",
+  "unpkg": "umd/btc-message-verifier.js",
+  "scripts": {
+    "build": "webpack",
+    "build-prod": "webpack --mode=production",
+    "build-web": "npm run build",
+    "build-node": "npm run build -- --config webpack.config.node.js",
+    "build-web-prod": "npm run build-prod",
+    "build-node-prod": "npm run build-prod -- --config webpack.config.node.js",
+    "prepublishOnly": "npm run test-node-umd-prod && npm run build-web-prod",
+    "test-node": "env RUNNING_MOCHA=\"yes\" mocha",
+    "test-node-umd": "npm run build-node && env RUNNING_MOCHA=\"yes\" mocha \"./test/umd/*.js\"",
+    "test-node-umd-prod": "npm run build-node-prod && env RUNNING_MOCHA=\"yes\" mocha \"./test/umd/*.js\"",
+    "coverage-node": "nyc npm run test-node",
+    "coverage-node-html-report": "npm run coverage-node && nyc report -r html",
+    "prep-test-browser": "npm run build-web-prod"
+  },
+  "files": [
+    "index.js",
+    "/umd/"
+  ],
+  "keywords": [
+    "Bitcoin",
+    "message",
+    "signature",
+    "verify"
+  ],
+  "author": "Cláudio de Castro",
+  "license": "MIT",
+  "engines": {
+    "node": "^8.0"
+  },
+  "dependencies": {
+    "bitcoinjs-lib": "^5.1.10",
+    "bitcoinjs-message": "^2.1.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.1.2",
+    "nyc": "^14.1.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "repository": "git@github.com:blockchainofthings/btc-message-verifier.git"
+}
