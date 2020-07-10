@@ -1,6 +1,6 @@
 {
   "name": "btc-message-verifier",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0-rc.2",
   "description": "JavaScript library used to verify a message that had been signed using Bitcoin's approach.",
   "main": "index.js",
   "unpkg": "umd/btc-message-verifier.js",
