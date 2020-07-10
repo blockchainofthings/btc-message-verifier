@@ -82,32 +82,146 @@ Input parameters:
 
 ### Verify message signed with a legacy bitcoin address
 
+On Node.js:
+
 ```javascript
-const result = btcMsgVerifier.verifyMessage(
-  'mkPa87aADjgNYfiVNV7tUkxmbB3qmbE7cg',
-  'H+dKQFYTbZwwqcExYap/ykVG23qRuxEbFOVfFoPBnBKWfI5jDPt61Y9pchdGkDULQ+x79ke8SosVpYygyVX8TDg=',
-  'Text to sign'
-);
+try {
+  const result = btcMsgVerifier.verifyMessage(
+    'mkPa87aADjgNYfiVNV7tUkxmbB3qmbE7cg',
+    'H+dKQFYTbZwwqcExYap/ykVG23qRuxEbFOVfFoPBnBKWfI5jDPt61Y9pchdGkDULQ+x79ke8SosVpYygyVX8TDg=',
+    'Text to sign'
+  );
+
+  if (result) {
+    console.log('Message successfully verified');
+  }
+  else {
+    console.log('Message could not be verified');
+  }
+}
+catch (err) {
+  console.error(err);
+}
+```
+
+On the browser:
+
+```html
+<script>
+try {
+  const result = btcMsgVerifier.verifyMessage(
+    'mkPa87aADjgNYfiVNV7tUkxmbB3qmbE7cg',
+    'H+dKQFYTbZwwqcExYap/ykVG23qRuxEbFOVfFoPBnBKWfI5jDPt61Y9pchdGkDULQ+x79ke8SosVpYygyVX8TDg=',
+    'Text to sign'
+  );
+
+  if (result) {
+    console.log('Message successfully verified');
+  }
+  else {
+    console.log('Message could not be verified');
+  }
+}
+catch (err) {
+  console.error(err);
+}
+</script>
 ```
 
 ### Verify message signed with a bech32 address
 
+On Node.js:
+
 ```javascript
-const result = btcMsgVerifier.verifyMessage(
-  'bcrt1qwfwu4tawzwdh233qlqwknk2r3quefyalvpwqyg',
-  'KBbtz1fqBrQdioHfM452V8pHWsMAAxyakjmVkxq3BuJiZgU5ln5nepJfs/3MrY6eeivElMIOM+nVVbbocU6zzmU=',
-  'Text to sign'
-);
+try {
+  const result = btcMsgVerifier.verifyMessage(
+    'bcrt1qwfwu4tawzwdh233qlqwknk2r3quefyalvpwqyg',
+    'KBbtz1fqBrQdioHfM452V8pHWsMAAxyakjmVkxq3BuJiZgU5ln5nepJfs/3MrY6eeivElMIOM+nVVbbocU6zzmU=',
+    'Text to sign'
+  );
+
+  if (result) {
+    console.log('Message successfully verified');
+  }
+  else {
+    console.log('Message could not be verified');
+  }
+}
+catch (err) {
+  console.error(err);
+}
+```
+
+On the browser:
+
+```html
+<script>
+try {
+  const result = btcMsgVerifier.verifyMessage(
+    'bcrt1qwfwu4tawzwdh233qlqwknk2r3quefyalvpwqyg',
+    'KBbtz1fqBrQdioHfM452V8pHWsMAAxyakjmVkxq3BuJiZgU5ln5nepJfs/3MrY6eeivElMIOM+nVVbbocU6zzmU=',
+    'Text to sign'
+  );
+
+  if (result) {
+    console.log('Message successfully verified');
+  }
+  else {
+    console.log('Message could not be verified');
+  }
+}
+catch (err) {
+  console.error(err);
+}
+</script>
 ```
 
 ### Verify message passing a public key hash
 
+On Node.js:
+
 ```javascript
-const result = btcMsgVerifier.verifyMessage(
-  Buffer.from('543fc89cd1e5bda2ba3c82f4b48e3a82694498be', 'hex'),
-  'IEk3JJnp8iKhAgp50hWCE7TCNciaDdrb8YNXWvqZzIUgcLvESYJO/ZFigJ726vpQ12tY6SDGg92aouzUMXKAgUE=',
-  'Text to sign'
-);
+try {
+  const result = btcMsgVerifier.verifyMessage(
+    Buffer.from('543fc89cd1e5bda2ba3c82f4b48e3a82694498be', 'hex'),
+    'IEk3JJnp8iKhAgp50hWCE7TCNciaDdrb8YNXWvqZzIUgcLvESYJO/ZFigJ726vpQ12tY6SDGg92aouzUMXKAgUE=',
+    'Text to sign'
+  );
+
+  if (result) {
+    console.log('Message successfully verified');
+  }
+  else {
+    console.log('Message could not be verified');
+  }
+}
+catch (err) {
+  console.error(err);
+}
+```
+
+On the browser:
+
+```html
+<script>
+try {
+  const result = btcMsgVerifier.verifyMessage(
+    btcMsgVerifier.Buffer.from('543fc89cd1e5bda2ba3c82f4b48e3a82694498be', 'hex'),
+    'IEk3JJnp8iKhAgp50hWCE7TCNciaDdrb8YNXWvqZzIUgcLvESYJO/ZFigJ726vpQ12tY6SDGg92aouzUMXKAgUE=',
+    'Text to sign'
+  );
+
+  if (result) {
+    console.log('Message successfully verified');
+  }
+  else {
+    console.log('Message could not be verified');
+  }
+}
+catch (err) {
+  console.error(err);
+}
+</script>
 ```
 
 ## License
