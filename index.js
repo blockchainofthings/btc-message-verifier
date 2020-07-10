@@ -74,8 +74,8 @@ const modulesToExport = {
     verifyMessage
 }
 
-if (typeof window === 'object' && window.RUNNING_MOCHA) {
-    // Running tests on the browser. Exports Buffer
+if (typeof window === 'object') {
+    // Running on the browser. Exports Buffer
     modulesToExport.Buffer = Buffer;
 }
 
